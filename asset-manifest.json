@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/gally-box-cricket-cafe/static/css/main.33b440b1.css",
+    "main.js": "/gally-box-cricket-cafe/static/js/main.356c38db.js",
+    "static/js/453.aad2fe52.chunk.js": "/gally-box-cricket-cafe/static/js/453.aad2fe52.chunk.js",
+    "index.html": "/gally-box-cricket-cafe/index.html",
+    "main.33b440b1.css.map": "/gally-box-cricket-cafe/static/css/main.33b440b1.css.map",
+    "main.356c38db.js.map": "/gally-box-cricket-cafe/static/js/main.356c38db.js.map",
+    "453.aad2fe52.chunk.js.map": "/gally-box-cricket-cafe/static/js/453.aad2fe52.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.33b440b1.css",
+    "static/js/main.356c38db.js"
+  ]
+}
