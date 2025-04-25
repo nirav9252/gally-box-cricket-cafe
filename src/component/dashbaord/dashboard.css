@@ -223,6 +223,44 @@ a {
   margin: 0; /* remove default margin */
 }
 
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  transition: 0.3s;
+  padding-top: 60px;
+  z-index: 1000;
+}
+
+.hamburger{
+  display: flex;
+  justify-content: end;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar nav a {
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.sidebar nav a:hover {
+  background-color: #575757;
+}
+
+.sidebar-toggle {
+  display: none;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -231,5 +269,22 @@ a {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    display: block;
+  }
+  .nav-mob-none {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Content styles on mobile */
+  section {
+    padding: 20px;
   }
 }

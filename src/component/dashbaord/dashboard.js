@@ -1,8 +1,16 @@
 import React from "react";
 import "./dashboard.css";
 import { Helmet } from "react-helmet";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { IoCloseSharp } from "react-icons/io5";
 
 const HomePage = () => {
+  const [isSidebarOpen, setSidebarOpen] = React.useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!isSidebarOpen);
+  };
+
   React.useEffect(() => {
     // Set the tab title directly here
     document.title = "Gally Box Cricket and Cafe";
@@ -18,6 +26,11 @@ const HomePage = () => {
       </Helmet>
 
       <header>
+        <div className="hamburger">
+          <button className="sidebar-toggle" onClick={toggleSidebar}>
+            {isSidebarOpen ? <IoCloseSharp /> : <RxHamburgerMenu />}
+          </button>
+        </div>
         <div className="logo-container">
           <div className="title">
             <h1>Gally Box Cricket & Cafe</h1>
@@ -26,13 +39,39 @@ const HomePage = () => {
         </div>
       </header>
 
-      <nav>
-        <a href="#about">About Us</a>
-        <a href="#services">Services</a>
-        <a href="#booking">Booking</a>
-        <a href="#menu">Menu</a>
-        <a href="#gallery">Gallery</a>
-      </nav>
+      {isSidebarOpen ? (
+        <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
+          <nav>
+            <a href="#about" onClick={toggleSidebar}>
+              About Us
+            </a>
+            <a href="#services" onClick={toggleSidebar}>
+              Services
+            </a>
+            <a href="#booking" onClick={toggleSidebar}>
+              Booking
+            </a>
+            <a href="#menu" onClick={toggleSidebar}>
+              Menu
+            </a>
+            <a href="#gallery" onClick={toggleSidebar}>
+              Gallery
+            </a>
+          </nav>
+        </div>
+      ) : (
+        <nav className="nav-mob-none">
+          <a href="#about" onClick={toggleSidebar}>
+            About Us
+          </a>
+          <a href="#services" onClick={toggleSidebar}>
+            Services
+          </a>
+          <a href="#booking">Booking</a>
+          <a href="#menu">Menu</a>
+          <a href="#gallery">Gallery</a>
+        </nav>
+      )}
 
       <section id="about">
         <h2>About Us</h2>
